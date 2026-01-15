@@ -1,13 +1,10 @@
 [Unit]
 Description=GPIO Power Button Monitoring Service
-# Ensures the service starts after the local filesystem is mounted
 After=local-fs.target
 
 [Service]
 Type=simple
-# Path to your script
 ExecStart=/bin/bash /path/to/power-button-gpio.sh
-# Restarts the script if it fails for any reason
 Restart=always
 RestartSec=5
 

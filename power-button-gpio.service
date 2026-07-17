@@ -1,10 +1,11 @@
 [Unit]
 Description=GPIO Power Button Monitoring Service
+# Ensures the service starts after the local filesystem is mounted
 After=local-fs.target
 
 [Service]
 Type=simple
-ExecStart=/bin/bash /path/to/power-button-gpio.sh
+ExecStart=/path/to/power-button-gpio.py
 Restart=always
 RestartSec=5
 
